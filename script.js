@@ -15,6 +15,15 @@ function abrirSobre() {
     const der = document.getElementById('sobreDerecha');
     const sello = document.getElementById('contenedorSello');
     const tarjetaInterior = document.getElementById('tarjetaInterior');
+    const musica = document.getElementById('musicaFondo');
+
+    // Reproducir canción al presionar el botón del sello
+    if (musica) {
+        musica.currentTime = 0;
+        musica.play().catch(error => {
+            console.log("Audio prevenido por el navegador:", error);
+        });
+    }
 
     if (sup && izq && der && sello) {
         sup.classList.add('abrir-arriba');
