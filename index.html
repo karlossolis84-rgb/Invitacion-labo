@@ -1,131 +1,75 @@
-<!DOCTYPE html>
+<!DOCTYPE1 html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reunión de Laboratorio R&D - 20 de Noviembre</title>
+    <title>Invitación - Laboratorio R&D</title>
     
-    <!-- Vista previa para WhatsApp -->
-    <meta property="og:title" content="Reunión Laboratorio R&D - 20 de Noviembre 🇲🇽">
-    <meta property="og:description" content="Acompáñanos a celebrar la convivencia de nuestro equipo de R&D en Rancho La libertad.">
-    <meta property="og:type" content="website">
-
-    <link rel="stylesheet" href="estilos.css">
-    <!-- Fuentes Temáticas -->
+    <!-- Fuentes de Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Rye&family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Rye&family=Special+Elite&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-    <!-- Audio de Fondo -->
-    <audio id="musicaFondo" src="cancion.mp3" loop></audio>
+    <!-- Audio de Fondo (Opcional) -->
+    <audio id="musicaFondo" loop preload="auto">
+        <source src="audio.mp3" type="audio/mpeg">
+    </audio>
 
-    <!-- PANTALLA INICIAL CON IMAGEN1.JPG (ZAPATA) -->
-    <section class="pantalla-inicial" id="pantallaInicial">
-        <div class="solapa sobre-superior" id="sobreSuperior"></div>
-        <div class="solapa sobre-izquierda" id="sobreIzquierda"></div>
-        <div class="solapa sobre-derecha" id="sobreDerecha"></div>
-        
-        <!-- Sello conmemorativo -->
-        <div class="sello-mariposa-container" id="contenedorSello" onclick="abrirSobreConMusica()">
+    <!-- Botón Flotante para Control de Audio -->
+    <button id="btnAudio" class="boton-audio" onclick="toggleMusica()">🎵</button>
+
+    <!-- PANTALLA INICIAL (SOBRE INTERACTIVO) -->
+    <div id="pantallaInicial" class="pantalla-inicial">
+        <div id="sobreSuperior" class="solapa sobre-superior"></div>
+        <div id="sobreIzquierda" class="solapa sobre-izquierda"></div>
+        <div id="sobreDerecha" class="solapa sobre-derecha"></div>
+
+        <!-- Sello Central militar / cera -->
+        <div id="contenedorSello" class="sello-mariposa-container" onclick="abrirSobreConMusica()">
             <div class="sello-cera">
-                <span class="iniciales-sello-brillante">20 N</span>
+                <span class="iniciales-sello-brillante">R&D</span>
             </div>
         </div>
 
-        <!-- Tarjeta Interior de Presentación -->
-        <div class="tarjeta-interior-sobre oculto" id="tarjetaInterior">
-            <div class="sub-bodas-oro">20 de Noviembre</div>
-
-            <h1 class="nombres-brillantes-oro">Laboratorio</h1>
-            <div class="conector-portada">de</div>
-            <h1 class="nombres-brillantes-oro">R&D</h1>
-
-            <div class="invitados-selector">
-                <span class="pases-texto">Invitación especial para:</span>
-                <h3 class="nombre-invitado-pantalla" id="mostrarNombreInvitado">Compañero de Trabajo</h3>
-            </div>
-
-            <button class="boton-abrir-sobre" onclick="entrarInvitacionPrincipal()">
-                <span>Abrir Despacho</span>
-            </button>
+        <!-- Tarjeta Interior que se revela al abrir -->
+        <div id="tarjetaInterior" class="tarjeta-interior-sobre oculto">
+            <p class="sub-bodas-oro">Reunión de Equipo</p>
+            <h1 class="nombres-brillantes-oro">LABORATORIO R&D</h1>
+            <p class="conector-portada">20 DE NOVIEMBRE</p>
+            <button class="boton-abrir-sobre" onclick="entrarInvitacionPrincipal()">ABRIR INVITACIÓN</button>
         </div>
-    </section>
+    </div>
 
     <!-- CONTENIDO PRINCIPAL DE LA INVITACIÓN -->
-    <main class="invitacion-contenido oculto" id="contenidoPrincipal">
+    <div id="contenidoPrincipal" class="invitacion-contenido oculto">
         
-        <!-- Botón Flotante de Audio -->
-        <button class="boton-audio" id="btnAudio" onclick="toggleMusica()">🎵</button>
+        <div class="invitados-selector">
+            <span class="pases-texto">INVITACIÓN PARA:</span>
+            <h3 id="mostrarNombreInvitado" class="nombre-invitado-pantalla">Compañero de Trabajo</h3>
+        </div>
+
+        <h2 class="subtitulo-dorado">Convivencia Revolucionaria</h2>
+
+        <div class="bloque-texto-libre">
+            <p class="frase-texto">¡Compañero(a)! Quedas cordialmente invitado(a) a celebrar nuestra tradicional convivencia del Laboratorio R&D.</p>
+        </div>
+
+        <!-- Imagen 3 con Difuminado -->
+        <div class="contenedor-imagen-difusa">
+            <img src="imagen3.jpg" alt="Laboratorio R&D" class="imagen-difusa-estilo">
+        </div>
 
         <div class="espaciador-grande"></div>
 
-        <!-- TÍTULO PRINCIPAL -->
-        <section class="seccion-limpia">
-            <h3 class="subtitulo-dorado" style="font-size: 2.8rem; margin-top: 10px;">Laboratorio R&D</h3>
-            
-            <p class="frase-texto" style="margin-top: 20px;">
-                "¡Adelante, compañeros! Un gran equipo se construye compartiendo momentos fuera de la oficina. ¡Te esperamos!"
-            </p>
-        </section>
-
-        <!-- FECHA Y HORA CON IMAGEN3 GRANDE Y DIFUSA -->
-        <section class="seccion-limpia">
+        <div class="seccion-limpia">
             <div class="fecha-destacada">
                 <span>20</span>
-                <span class="mes">NOV</span>
-                <span>26</span>
+                <span class="mes">NOVIEMBRE</span>
+                <span>2026</span>
             </div>
-            <p class="hora-evento">🕒 Tarde de convivencia</p>
-
-            <!-- IMAGEN3 GRANDE CON DIFUMINADO -->
-            <div class="contenedor-imagen-difusa">
-                <img src="imagen3.jpg" alt="Conmemoración R&D" class="imagen-difusa-estilo">
-            </div>
-        </section>
-
-        <!-- UBICACIÓN ACTUALIZADA CON NUEVO LINK -->
-        <section class="seccion-limpia">
-            <h3 class="subtitulo-dorado">Cuartel General</h3>
-            <p class="lugar-nombre"><strong>Rancho La libertad casa de Adelita (Liliana Limón)</strong></p>
-            <a href="https://maps.app.goo.gl/vXF2BEquvvS4QHqh7" target="_blank" class="boton-dorado">Ver Ubicación en Mapa</a>
-
-            <!-- IMAGEN4 GRANDE CON DIFUMINADO DEBAJO DE LA UBICACIÓN -->
-            <div class="contenedor-imagen-difusa" style="margin-top: 30px;">
-                <img src="imagen4.jpg" alt="Detalle del evento" class="imagen-difusa-estilo">
-            </div>
-        </section>
-
-        <!-- NOTA ESPECIAL -->
-        <section class="seccion-limpia">
-            <div class="bloque-texto-libre">
-                <h3 class="subtitulo-dorado">Aviso Oficial</h3>
-                <p class="texto-claro">Convivencia del equipo de laboratorio</p>
-                <p class="cursiva" style="margin-top: 10px;">Habrá excelente ambiente, comida y camaradería.</p>
-            </div>
-        </section>
-
-        <!-- RSVP (CONFIRMACIÓN) -->
-        <section class="seccion-rsvp">
-            <div class="rsvp-box">
-                <p class="fecha-limite">Pase de Lista</p>
-                <p class="nota-confirmacion">Confirma tu asistencia con anticipación para la logística.</p>
-                <button class="boton-whatsapp" onclick="enviarWhatsApp()">
-                    Confirmar por WhatsApp
-                </button>
-            </div>
-        </section>
-
-        <!-- BARRA TRICOLOR DECORATIVA -->
-        <div class="bandera-inferior">
-            <div class="franja verde"></div>
-            <div class="franja blanco"></div>
-            <div class="franja rojo"></div>
-        </div>
-
-    </main>
-
-    <script src="script.js"></script>
-</body>
-</html>
+            <p class="hora-evento">A partir de las 2:00 PM</p>
+            <p class="lugar-nombre">Ran

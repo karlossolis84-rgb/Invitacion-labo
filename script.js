@@ -65,8 +65,11 @@ function toggleMusica() {
 }
 
 function enviarWhatsApp() {
-    const telefono = "524442152155";
-    const texto = `¡Hola! Soy ${nombreInvitado}. Confirmo mi asistencia al cuartel general para la reunión del 20 de noviembre en casa de Lupita, en Villa de Zaragoza. ¡Nos vemos por allá! 🇲🇽✨`;
+    // Número actualizado para confirmación
+    const telefono = "524446871367"; 
+
+    const texto = `¡Hola! Soy ${nombreInvitado}. Confirmo mi asistencia para la reunión de Laboratorio R&D en Rancho La libertad, casa de Adelita (Liliana Limón) el 20 de noviembre. ¡Nos vemos por allá! 🇲🇽✨`;
+    
     const urlWhatsApp = `https://wa.me/${telefono}?text=${encodeURIComponent(texto)}`;
     window.open(urlWhatsApp, '_blank');
 }
