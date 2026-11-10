@@ -1,0 +1,288 @@
+/* RESET GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #2b1f14;
+    color: #3b281a;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+.oculto {
+    display: none !important;
+}
+
+/* CONTENEDOR PRINCIPAL CON IMAGEN2 VERTICAL Y DIFUMINADA */
+.invitacion-contenido {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    background: 
+        linear-gradient(to bottom, rgba(230, 205, 170, 0.4), rgba(210, 180, 140, 0.8), rgba(230, 205, 170, 0.4)),
+        url('imagen2.jpg');
+    background-size: 100% 550px;
+    background-repeat: repeat-y;
+    background-position: top center;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.8);
+    padding: 20px 25px;
+    position: relative;
+    min-height: 100vh;
+    border: 4px solid #4a3321;
+}
+
+/* ESTILO UNIFICADO PARA IMAGEN3 E IMAGEN4 A LO ANCHO Y DIFUMINADAS ARRIBA/ABAJO */
+.contenedor-imagen-difusa {
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.imagen-difusa-estilo {
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 2px solid #704c14;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    /* Efecto de difuminado suave en la parte superior e inferior */
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
+}
+
+/* PANTALLA INICIAL CON 'imagen1.jpg' (Portada del sobre) */
+.pantalla-inicial {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 450px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: linear-gradient(rgba(31, 20, 13, 0.3), rgba(31, 20, 13, 0.4)), url('imagen1.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #4a3321;
+}
+
+.solapa {
+    position: absolute;
+    background: linear-gradient(135deg, rgba(61, 43, 26, 0.85) 0%, rgba(20, 13, 8, 0.85) 100%);
+    border: 1px solid rgba(184, 134, 11, 0.4);
+    z-index: 10;
+    transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.sobre-superior {
+    top: 0; left: 0; width: 100%; height: 50%;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    transform-origin: top;
+}
+
+.sobre-izquierda {
+    top: 0; left: 0; width: 50%; height: 100%;
+    clip-path: polygon(0 0, 0 100%, 100% 50%);
+    transform-origin: left;
+}
+
+.sobre-derecha {
+    top: 0; right: 0; width: 50%; height: 100%;
+    clip-path: polygon(100% 0, 100% 100%, 0 50%);
+    transform-origin: right;
+}
+
+.abrir-arriba { transform: translateY(-100%); }
+.abrir-izq { transform: translateX(-100%); }
+.abrir-der { transform: translateX(100%); }
+
+/* Sello central militar */
+.sello-mariposa-container {
+    position: absolute;
+    z-index: 20;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.sello-mariposa-container:hover { transform: scale(1.08); }
+
+.sello-cera {
+    width: 95px;
+    height: 95px;
+    background: linear-gradient(135deg, #8c672b, #3b281a);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.8), inset 0 2px 5px rgba(255,255,255,0.3);
+    border: 3px solid #d4af37;
+}
+
+.iniciales-sello-brillante {
+    font-family: 'Rye', serif;
+    font-size: 1.5rem;
+    color: #f5ebd9;
+    letter-spacing: 2px;
+}
+
+.tarjeta-interior-sobre {
+    position: relative;
+    z-index: 15;
+    text-align: center;
+    padding: 30px 20px;
+    width: 90%;
+    background: rgba(31, 20, 13, 0.9);
+    border-radius: 12px;
+    border: 2px solid #d4af37;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.9);
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.sub-bodas-oro {
+    font-family: 'Special Elite', cursive;
+    color: #d4af37;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.nombres-brillantes-oro {
+    font-family: 'Rye', serif;
+    font-size: 3.2rem;
+    line-height: 1.1;
+    margin: 5px 0;
+    color: #f5ebd9;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+    display: inline-block;
+    letter-spacing: 1px;
+}
+
+.conector-portada {
+    font-family: 'Special Elite', cursive;
+    color: #d4af37;
+    font-size: 1.5rem;
+    margin: 5px 0;
+}
+
+.boton-abrir-sobre {
+    background: linear-gradient(45deg, #704c14, #b8860b);
+    color: #fff;
+    font-family: 'Special Elite', cursive;
+    font-size: 1rem;
+    padding: 14px 32px;
+    border-radius: 8px;
+    border: 2px solid #d4af37;
+    cursor: pointer;
+    margin-top: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    transition: transform 0.2s;
+    letter-spacing: 1px;
+}
+
+.boton-abrir-sobre:hover { transform: scale(1.05); }
+
+.nombres-secundarios {
+    font-family: 'Rye', serif;
+    color: #3b281a;
+    font-size: 1.6rem;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.subtitulo-dorado {
+    font-family: 'Special Elite', cursive;
+    color: #704c14;
+    font-size: 2rem;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.invitados-selector { margin: 25px 0; }
+.pases-texto { display: block; margin-bottom: 5px; color: #5c4028; font-size: 0.85rem; font-family: 'Special Elite', cursive; }
+.nombre-invitado-pantalla { font-family: 'Rye', serif; color: #1f140d; font-size: 1.3rem; margin: 5px 0; }
+
+.boton-audio {
+    position: fixed; bottom: 25px; right: 20px; z-index: 99;
+    background: #5c3a21; border: 2px solid #3b281a; border-radius: 50%;
+    width: 45px; height: 45px; font-size: 1.2rem; cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4); color: #fff;
+}
+
+.espaciador-grande { height: 10px; }
+.seccion-limpia { text-align: center; margin-bottom: 70px; padding: 15px 5px; }
+.bloque-texto-libre { margin-bottom: 30px; }
+
+.frase-texto {
+    font-family: 'Special Elite', cursive;
+    font-size: 1.5rem;
+    color: #4a3321;
+    line-height: 1.5;
+    padding: 0 10px;
+}
+
+.fecha-destacada {
+    display: flex; justify-content: center; align-items: center; gap: 15px;
+    font-family: 'Rye', serif; font-size: 2.2rem; color: #3b281a; margin: 15px 0;
+}
+.fecha-destacada .mes { font-size: 1.1rem; font-style: normal; color: #704c14; font-family: 'Special Elite', cursive; }
+
+.hora-evento { font-size: 1.2rem; color: #4a3321; margin: 10px 0; font-family: 'Special Elite', cursive; }
+.lugar-nombre { font-size: 1.1rem; color: #1f140d; margin: 10px 0; line-height: 1.5; font-weight: bold; }
+.texto-claro { color: #3b281a; font-size: 1.05rem; }
+
+.boton-dorado, .boton-whatsapp {
+    display: inline-block; padding: 12px 30px; border-radius: 8px;
+    text-decoration: none; font-weight: bold; margin-top: 15px; cursor: pointer;
+    font-family: 'Special Elite', cursive; letter-spacing: 1px; border: 2px solid #3b281a;
+}
+
+.boton-dorado {
+    background: linear-gradient(45deg, #704c14, #b8860b);
+    color: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.seccion-rsvp { text-align: center; margin-bottom: 50px; padding: 10px; }
+.rsvp-box {
+    background: rgba(245, 235, 217, 0.95); border: 2px dashed #614327;
+    border-radius: 10px; padding: 25px 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.boton-whatsapp {
+    background: #25d366; color: #fff; font-size: 1rem; width: 100%; border: 2px solid #128c7e;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.cursiva { font-style: italic; color: #5c4028; font-size: 1rem; font-family: 'Special Elite', cursive; }
+.fecha-limite { color: #3b281a; margin-bottom: 8px; font-size: 1.1rem; font-weight: bold; font-family: 'Special Elite', cursive; }
+.nota-confirmacion { font-size: 0.85rem; color: #5c4028; margin-bottom: 15px; }
+
+/* BANDA TRICOLOR INFERIOR */
+.bandera-inferior {
+    display: flex;
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: 2px solid #3b281a;
+}
+.franja { flex: 1; height: 100%; }
+.franja.verde { background-color: #006847; }
+.franja.blanco { background-color: #ffffff; }
+.franja.rojo { background-color: #ce1126; }
