@@ -18,7 +18,7 @@ html, body {
     display: none !important;
 }
 
-/* CONTENEDOR PRINCIPAL ADAPTABLE A TODO TIPO DE CELULAR */
+/* CONTENEDOR PRINCIPAL ADAPTABLE A CELULAR */
 .invitacion-contenido {
     width: 100%;
     max-width: 480px;
@@ -57,7 +57,7 @@ html, body {
     mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
 }
 
-/* PANTALLA INICIAL ADAPTABLE */
+/* PANTALLA INICIAL */
 .pantalla-inicial {
     position: relative;
     overflow: hidden;
@@ -103,8 +103,8 @@ html, body {
 .abrir-arriba { transform: translateY(-100%); }
 .abrir-izq { transform: translateX(-100%); }
 .abrir-der { transform: translateX(100%); }
+.desvanecer-centro { opacity: 0; transition: opacity 0.5s ease; }
 
-/* Sello central */
 .sello-mariposa-container {
     position: absolute;
     z-index: 20;
@@ -209,13 +209,6 @@ html, body {
 .invitados-selector { margin: 25px 0; text-align: center; }
 .pases-texto { display: block; margin-bottom: 5px; color: #5c4028; font-size: 0.85rem; font-family: 'Special Elite', cursive; }
 .nombre-invitado-pantalla { font-family: 'Rye', serif; color: #f5ebd9; font-size: 1.2rem; margin: 5px 0; word-break: break-word; }
-
-.boton-audio {
-    position: fixed; bottom: 25px; right: 20px; z-index: 99;
-    background: #5c3a21; border: 2px solid #3b281a; border-radius: 50%;
-    width: 45px; height: 45px; font-size: 1.2rem; cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.4); color: #fff;
-}
 
 .espaciador-grande { height: 10px; }
 .seccion-limpia { text-align: center; margin-bottom: 60px; padding: 10px 0; }

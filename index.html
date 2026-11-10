@@ -1,4 +1,4 @@
-<!DOCTYPE1 html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -14,28 +14,20 @@
 </head>
 <body>
 
-    <!-- Audio de Fondo (Opcional) -->
-    <audio id="musicaFondo" loop preload="auto">
-        <source src="audio.mp3" type="audio/mpeg">
-    </audio>
-
-    <!-- Botón Flotante para Control de Audio -->
-    <button id="btnAudio" class="boton-audio" onclick="toggleMusica()">🎵</button>
-
     <!-- PANTALLA INICIAL (SOBRE INTERACTIVO) -->
     <div id="pantallaInicial" class="pantalla-inicial">
         <div id="sobreSuperior" class="solapa sobre-superior"></div>
         <div id="sobreIzquierda" class="solapa sobre-izquierda"></div>
         <div id="sobreDerecha" class="solapa sobre-derecha"></div>
 
-        <!-- Sello Central militar / cera -->
-        <div id="contenedorSello" class="sello-mariposa-container" onclick="abrirSobreConMusica()">
+        <!-- Sello Central -->
+        <div id="contenedorSello" class="sello-mariposa-container" onclick="abrirSobre()">
             <div class="sello-cera">
                 <span class="iniciales-sello-brillante">R&D</span>
             </div>
         </div>
 
-        <!-- Tarjeta Interior que se revela al abrir -->
+        <!-- Tarjeta Interior -->
         <div id="tarjetaInterior" class="tarjeta-interior-sobre oculto">
             <p class="sub-bodas-oro">Reunión de Equipo</p>
             <h1 class="nombres-brillantes-oro">LABORATORIO R&D</h1>
@@ -72,4 +64,36 @@
                 <span>2026</span>
             </div>
             <p class="hora-evento">A partir de las 2:00 PM</p>
-            <p class="lugar-nombre">Ran
+            <p class="lugar-nombre">Rancho La libertad casa de Adelita (Liliana Limón)</p>
+            
+            <a href="https://maps.google.com" target="_blank" class="boton-dorado">Ver Ubicación en Maps</a>
+        </div>
+
+        <!-- Imagen 4 con Difuminado -->
+        <div class="contenedor-imagen-difusa">
+            <img src="imagen4.jpg" alt="Convivencia R&D" class="imagen-difusa-estilo">
+        </div>
+
+        <div class="espaciador-grande"></div>
+
+        <!-- SECCIÓN DE CONFIRMACIÓN (RSVP) -->
+        <div class="seccion-rsvp">
+            <div class="rsvp-box">
+                <p class="fecha-limite">Confirmación de Asistencia</p>
+                <p class="nota-confirmacion">Por favor confirma tu presencia lo antes posible.</p>
+                <button class="boton-whatsapp" onclick="enviarWhatsApp()">Confirmar por WhatsApp</button>
+            </div>
+        </div>
+
+        <!-- BANDA TRICOLOR INFERIOR -->
+        <div class="bandera-inferior">
+            <div class="franja verde"></div>
+            <div class="franja blanco"></div>
+            <div class="franja rojo"></div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

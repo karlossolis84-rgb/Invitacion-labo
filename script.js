@@ -7,28 +7,14 @@ window.addEventListener('DOMContentLoaded', () => {
         nombreInvitado = urlParams.get('invitado');
         document.getElementById('mostrarNombreInvitado').textContent = nombreInvitado;
     }
-
-    const musica = document.getElementById('musicaFondo');
-    if (musica) {
-        musica.pause();
-        musica.currentTime = 0;
-    }
 });
 
-function abrirSobreConMusica() {
+function abrirSobre() {
     const sup = document.getElementById('sobreSuperior');
     const izq = document.getElementById('sobreIzquierda');
     const der = document.getElementById('sobreDerecha');
     const sello = document.getElementById('contenedorSello');
     const tarjetaInterior = document.getElementById('tarjetaInterior');
-    const musica = document.getElementById('musicaFondo');
-
-    if (musica) {
-        musica.currentTime = 0;
-        musica.play().catch(error => {
-            console.log("Audio prevenido por el navegador:", error);
-        });
-    }
 
     if (sup && izq && der && sello) {
         sup.classList.add('abrir-arriba');
@@ -51,21 +37,7 @@ function entrarInvitacionPrincipal() {
     contenidoPrincipal.classList.remove('oculto');
 }
 
-function toggleMusica() {
-    const musica = document.getElementById('musicaFondo');
-    const btnAudio = document.getElementById('btnAudio');
-
-    if (musica.paused) {
-        musica.play();
-        btnAudio.textContent = "🎵";
-    } else {
-        musica.pause();
-        btnAudio.textContent = "🔇";
-    }
-}
-
 function enviarWhatsApp() {
-    // Número actualizado para confirmación
     const telefono = "524446871367"; 
 
     const texto = `¡Hola! Soy ${nombreInvitado}. Confirmo mi asistencia para la reunión de Laboratorio R&D en Rancho La libertad, casa de Adelita (Liliana Limón) el 20 de noviembre. ¡Nos vemos por allá! 🇲🇽✨`;
