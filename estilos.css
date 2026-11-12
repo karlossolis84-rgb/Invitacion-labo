@@ -12,13 +12,14 @@ html, body {
     color: #3b281a;
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
+    text-align: center;
 }
 
 .oculto {
     display: none !important;
 }
 
-/* CONTENEDOR PRINCIPAL ADAPTABLE A CELULAR (Con padding seguro para los lados) */
+/* CONTENEDOR PRINCIPAL ADAPTABLE Y CENTRADO EN CUALQUIER CELULAR */
 .invitacion-contenido {
     width: 100%;
     max-width: 480px;
@@ -30,10 +31,13 @@ html, body {
     background-repeat: repeat-y;
     background-position: top center;
     box-shadow: 0 0 35px rgba(0, 0, 0, 0.8);
-    padding: 20px 18px 50px 18px; /* Márgenes laterales seguros para que nada se corte */
+    padding: 25px 20px 55px 20px;
     position: relative;
     min-height: 100vh;
     border: 4px solid #4a3321;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* IMÁGENES 3 Y 4 ADAPTABLES Y DIFUMINADAS */
@@ -80,6 +84,7 @@ html, body {
     border: 1px solid rgba(184, 134, 11, 0.4);
     z-index: 10;
     transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
+    pointer-events: none;
 }
 
 .sobre-superior {
@@ -107,12 +112,13 @@ html, body {
 
 .sello-mariposa-container {
     position: absolute;
-    z-index: 20;
+    z-index: 25;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: transform 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .sello-mariposa-container:hover { transform: scale(1.08); }
@@ -138,15 +144,15 @@ html, body {
 
 .tarjeta-interior-sobre {
     position: relative;
-    z-index: 15;
+    z-index: 20;
     text-align: center;
     padding: 25px 15px;
     width: 90%;
-    background: rgba(31, 20, 13, 0.9);
+    background: rgba(31, 20, 13, 0.92);
     border-radius: 12px;
     border: 2px solid #d4af37;
     box-shadow: 0 8px 25px rgba(0,0,0,0.9);
-    animation: fadeIn 1s ease forwards;
+    animation: fadeIn 0.8s ease forwards;
 }
 
 @keyframes fadeIn {
@@ -165,12 +171,12 @@ html, body {
 
 .nombres-brillantes-oro {
     font-family: 'Rye', serif;
-    font-size: 2.3rem; /* Ajustado para pantallas chicas */
-    line-height: 1.1;
+    font-size: 2.1rem;
+    line-height: 1.15;
     margin: 5px 0;
     color: #f5ebd9;
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
-    display: inline-block;
+    display: block;
     letter-spacing: 1px;
 }
 
@@ -178,7 +184,7 @@ html, body {
     font-family: 'Special Elite', cursive;
     color: #d4af37;
     font-size: 1.3rem;
-    margin: 5px 0;
+    margin: 8px 0;
 }
 
 .boton-abrir-sobre {
@@ -186,7 +192,7 @@ html, body {
     color: #fff;
     font-family: 'Special Elite', cursive;
     font-size: 0.95rem;
-    padding: 12px 24px;
+    padding: 13px 26px;
     border-radius: 8px;
     border: 2px solid #d4af37;
     cursor: pointer;
@@ -203,24 +209,37 @@ html, body {
     color: #704c14;
     font-size: 1.5rem;
     text-align: center;
+    width: 100%;
     margin: 12px 0;
 }
 
-.invitados-selector { margin: 15px 0; text-align: center; }
-.pases-texto { display: block; margin-bottom: 3px; color: #5c4028; font-size: 0.8rem; font-family: 'Special Elite', cursive; }
-.nombre-invitado-pantalla { font-family: 'Rye', serif; color: #f5ebd9; font-size: 1.1rem; margin: 3px 0; word-break: break-word; }
+.invitados-selector { margin: 12px 0; width: 100%; text-align: center; }
+.pases-texto { display: block; margin-bottom: 4px; color: #5c4028; font-size: 0.85rem; font-family: 'Special Elite', cursive; }
+.nombre-invitado-pantalla { 
+    font-family: 'Rye', serif; 
+    color: #f5ebd9; 
+    background: rgba(59, 40, 26, 0.85);
+    padding: 6px 14px;
+    border-radius: 6px;
+    display: inline-block;
+    font-size: 1.1rem; 
+    margin: 4px auto; 
+    word-break: break-word; 
+}
 
-.espaciador-grande { height: 5px; }
-.seccion-limpia { text-align: center; margin-bottom: 40px; padding: 5px 0; }
-.bloque-texto-libre { margin-bottom: 15px; text-align: center; }
+.espaciador-grande { height: 8px; }
+.seccion-limpia { width: 100%; text-align: center; margin-bottom: 35px; padding: 5px 0; }
+.bloque-texto-libre { width: 100%; margin-bottom: 15px; text-align: center; }
 
 .frase-texto {
     font-family: 'Special Elite', cursive;
-    font-size: 1.15rem; /* Letra cómoda y legible sin desbordarse */
+    font-size: 1.12rem;
     color: #4a3321;
-    line-height: 1.4;
-    padding: 0 5px;
-    word-break: break-word;
+    line-height: 1.45;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 100%;
+    word-wrap: break-word;
 }
 
 .fecha-destacada {
@@ -229,34 +248,119 @@ html, body {
 }
 .fecha-destacada .mes { font-size: 0.95rem; font-style: normal; color: #704c14; font-family: 'Special Elite', cursive; }
 
-.hora-evento { font-size: 1rem; color: #4a3321; margin: 8px 0; font-family: 'Special Elite', cursive; }
-.lugar-nombre { font-size: 0.98rem; color: #1f140d; margin: 8px 0; line-height: 1.4; font-weight: bold; }
+.hora-evento { font-size: 1.05rem; color: #4a3321; margin: 8px 0; font-family: 'Special Elite', cursive; font-weight: bold; }
 
-.boton-dorado, .boton-whatsapp {
-    display: inline-block; padding: 12px 20px; border-radius: 8px;
-    text-decoration: none; font-weight: bold; margin-top: 12px; cursor: pointer;
-    font-family: 'Special Elite', cursive; letter-spacing: 1px; border: 2px solid #3b281a;
+/* CONTADOR REGRESIVO */
+.contador-box {
+    background: rgba(59, 40, 26, 0.9);
+    border: 2px solid #d4af37;
+    border-radius: 10px;
+    padding: 12px 10px;
+    margin: 16px auto;
+    width: 100%;
+    max-width: 340px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.contador-titulo {
+    font-family: 'Special Elite', cursive;
+    color: #d4af37;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.contador-grid {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 6px;
+}
+
+.tiempo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(245, 235, 217, 0.12);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 6px;
+    padding: 6px 8px;
+    min-width: 62px;
+}
+
+.tiempo-item span {
+    font-family: 'Rye', serif;
+    font-size: 1.35rem;
+    color: #f5ebd9;
+    line-height: 1.1;
+}
+
+.tiempo-item small {
+    font-family: 'Special Elite', cursive;
+    font-size: 0.7rem;
+    color: #d4af37;
+    margin-top: 3px;
+}
+
+.lugar-nombre { font-size: 1rem; color: #1f140d; margin: 12px 0 6px 0; line-height: 1.4; font-weight: bold; text-align: center; }
+
+.direccion-texto {
+    margin-top: 6px;
+    font-family: 'Special Elite', cursive;
+    font-size: 0.92rem;
+    color: #4a3321;
+    line-height: 1.45;
+    text-align: center;
+}
+
+/* BOTONES DE UBICACIÓN */
+.botones-ubicacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 14px;
+    width: 100%;
+}
+
+.boton-dorado, .boton-ruta, .boton-whatsapp {
+    display: inline-block; padding: 12px 18px; border-radius: 8px;
+    text-decoration: none; font-weight: bold; cursor: pointer;
+    font-family: 'Special Elite', cursive; letter-spacing: 0.5px; border: 2px solid #3b281a;
+    width: 100%;
+    max-width: 310px;
+    text-align: center;
 }
 
 .boton-dorado {
     background: linear-gradient(45deg, #704c14, #b8860b);
     color: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    font-size: 0.95rem;
+    font-size: 0.92rem;
 }
 
-.seccion-rsvp { text-align: center; margin-bottom: 30px; padding: 0 5px; }
+.boton-ruta {
+    background: #3b281a;
+    color: #f5ebd9;
+    border: 2px solid #d4af37;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    font-size: 0.88rem;
+}
+
+.seccion-rsvp { width: 100%; text-align: center; margin-bottom: 25px; }
 .rsvp-box {
     background: rgba(245, 235, 217, 0.95); border: 2px dashed #614327;
-    border-radius: 10px; padding: 18px 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 10px; padding: 18px 14px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 100%;
 }
 
 .boton-whatsapp {
-    background: #25d366; color: #fff; font-size: 0.95rem; width: 100%; border: 2px solid #128c7e;
+    background: #25d366; color: #fff; font-size: 0.95rem; border: 2px solid #128c7e;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    margin-top: 6px;
 }
 
 .fecha-limite { color: #3b281a; margin-bottom: 6px; font-size: 1rem; font-weight: bold; font-family: 'Special Elite', cursive; }
-.nota-confirmacion { font-size: 0.8rem; color: #5c4028; margin-bottom: 12px; }
+.nota-confirmacion { font-size: 0.82rem; color: #5c4028; margin-bottom: 10px; }
 
 /* BANDA TRICOLOR INFERIOR */
 .bandera-inferior {

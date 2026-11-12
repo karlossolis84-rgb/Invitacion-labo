@@ -2,12 +2,12 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Invitación - Laboratorio R&D</title>
     
     <!-- METADATOS PARA VISTA PREVIA EN WHATSAPP -->
     <meta property="og:title" content="Invitación - Convivencia Laboratorio R&D">
-    <meta property="og:description" content="20 de noviembre a partir de las 2:00 PM. ¡Te esperamos!">
+    <meta property="og:description" content="20 de noviembre a partir de las 3:30 PM. ¡Te esperamos!">
     <meta property="og:image" content="https://karlossolis84-rgb.github.io/Invitacion-labo/imagen3.jpg">
     <meta property="og:url" content="https://karlossolis84-rgb.github.io/Invitacion-labo/">
     <meta property="og:type" content="website">
@@ -17,12 +17,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Rye&family=Special+Elite&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="estilos.css?v=3">
 </head>
 <body>
 
     <!-- AUDIO DE FONDO -->
-    <audio id="musicaFondo" loop preload="auto">
+    <audio id="musicaFondo" loop preload="auto" playsinline>
         <source src="cancion.mp3" type="audio/mpeg">
     </audio>
 
@@ -44,7 +44,7 @@
             <p class="sub-bodas-oro">Reunión de Equipo</p>
             <h1 class="nombres-brillantes-oro">LABORATORIO R&D</h1>
             <p class="conector-portada">20 DE NOVIEMBRE</p>
-            <button class="boton-abrir-sobre" onclick="entrarInvitacionPrincipal()">ABRIR INVITACIÓN</button>
+            <button type="button" class="boton-abrir-sobre" onclick="entrarInvitacionPrincipal()">ABRIR INVITACIÓN</button>
         </div>
     </div>
 
@@ -75,13 +75,40 @@
                 <span class="mes">NOVIEMBRE</span>
                 <span>2026</span>
             </div>
-            <p class="hora-evento">A partir de las 2:00 PM</p>
+            <p class="hora-evento">A partir de las 3:30 PM</p>
+
+            <!-- CONTADOR REGRESIVO -->
+            <div class="contador-box">
+                <p class="contador-titulo">Faltan para la convivencia:</p>
+                <div id="contador" class="contador-grid">
+                    <div class="tiempo-item">
+                        <span id="dias">00</span>
+                        <small>Días</small>
+                    </div>
+                    <div class="tiempo-item">
+                        <span id="horas">00</span>
+                        <small>Horas</small>
+                    </div>
+                    <div class="tiempo-item">
+                        <span id="minutos">00</span>
+                        <small>Min</small>
+                    </div>
+                    <div class="tiempo-item">
+                        <span id="segundos">00</span>
+                        <small>Seg</small>
+                    </div>
+                </div>
+            </div>
+
             <p class="lugar-nombre">Rancho La libertad casa de Adelita (Liliana Limón)</p>
-            <p class="texto-claro" style="margin-top: 8px; font-family: 'Special Elite', cursive; font-size: 0.95rem; color: #4a3321;">
+            <p class="direccion-texto">
                 Calle Ignacio Zaragoza<br>Privada Olmo #178<br>Colonia Quintas de la Hacienda 2
             </p>
             
-            <a href="https://maps.app.goo.gl/heneUWVq4faEVaum9?g_st=ac" target="_blank" class="boton-dorado">Ver Ubicación en Maps</a>
+            <div class="botones-ubicacion">
+                <a href="https://maps.app.goo.gl/3ndH29DuJ1AcXYUM8" target="_blank" rel="noopener noreferrer" class="boton-dorado">Ver Ubicación en Maps</a>
+                <a href="https://www.google.com/maps/dir/?api=1&origin=Valeo+Wipers+San+Luis+Potosi&destination=Calle+Ignacio+Zaragoza+Privada+Olmo+178+Quintas+de+la+Hacienda+2+San+Luis+Potosi&travelmode=driving" target="_blank" rel="noopener noreferrer" class="boton-ruta">Cómo llegar desde Valeo Wipers</a>
+            </div>
         </div>
 
         <!-- Imagen 4 con Difuminado -->
@@ -96,7 +123,7 @@
             <div class="rsvp-box">
                 <p class="fecha-limite">Confirmación de Asistencia</p>
                 <p class="nota-confirmacion">Por favor confirma tu presencia lo antes posible.</p>
-                <button class="boton-whatsapp" onclick="enviarWhatsApp()">Confirmar por WhatsApp</button>
+                <button type="button" class="boton-whatsapp" onclick="enviarWhatsApp()">Confirmar por WhatsApp</button>
             </div>
         </div>
 
@@ -109,6 +136,6 @@
 
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=3"></script>
 </body>
 </html>
