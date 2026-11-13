@@ -22,7 +22,6 @@ function abrirSobre() {
     const tarjetaInterior = document.getElementById('tarjetaInterior');
     const musica = document.getElementById('musicaFondo');
 
-    // Ejecuta la animación primero para garantizar que nunca se bloquee en iPhone o navegadores internos
     if (sup) sup.classList.add('abrir-arriba');
     if (izq) izq.classList.add('abrir-izq');
     if (der) der.classList.add('abrir-der');
@@ -33,7 +32,6 @@ function abrirSobre() {
         if (tarjetaInterior) tarjetaInterior.classList.remove('oculto');
     }, 550);
 
-    // Intenta reproducir música de forma segura sin interrumpir el flujo si el dispositivo bloquea audio
     try {
         if (musica) {
             musica.currentTime = 0;
@@ -54,7 +52,6 @@ function entrarInvitacionPrincipal() {
     if (contenidoPrincipal) contenidoPrincipal.classList.remove('oculto');
     window.scrollTo(0, 0);
 
-    // Segundo intento de reproducción por si el navegador exigía este segundo clic
     try {
         if (musica && musica.paused) {
             musica.play().catch(() => {});
@@ -63,7 +60,6 @@ function entrarInvitacionPrincipal() {
 }
 
 function iniciarContador() {
-    // 20 de noviembre de 2026 a las 3:30 PM (15:30:00) hora centro de México
     const fechaEvento = new Date("2026-11-20T15:30:00-06:00").getTime();
 
     function actualizar() {
